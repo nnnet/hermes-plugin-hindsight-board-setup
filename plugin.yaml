@@ -1,0 +1,30 @@
+name: hindsight-board-setup
+kind: standalone
+version: 0.1.0
+description: |
+  Per-board Hindsight bank + project-overview mental-model setup.
+
+  Когда команда (Тимлид + исполнители) начинает работу над новым проектом
+  через kanban-board, этот модуль создаёт:
+  * Hindsight bank ``hermes-board-<slug>`` — общий банк команды для
+    knowledge-sharing
+  * Mental-model ``project-overview`` внутри банка — для
+    «why/what-for/decisions/blockers» (НЕ для «what was done» — это git's
+    workspace job)
+
+  Division of labour:
+    GIT (workspaces/<board>/) — WHAT was done (commits, file diffs)
+    HINDSIGHT bank ``project-overview`` — WHY / WHAT-FOR / decisions /
+                                          rejected alternatives / blockers
+
+  Состояние: **dormant**. Главная функция ``init_board_hindsight(board_slug)``
+  defined, но wire-up в kanban-board lifecycle hook отсутствует (раньше
+  жил в overlay overrides/hermes_cli/kanban_db.py:_maybe_init_github_mirror,
+  который удалён 2026-05-31 при переходе на release tag).
+
+  Для подключения нужно либо:
+  1. upstream PR — добавить post-board-create hook в hermes_cli/kanban_db.py
+  2. monkey-patch плагин — wrap kb.create_board() и call init_board_hindsight
+
+author: nnnet/AiManager
+repo: https://github.com/nnnet/hermes-plugin-hindsight-board-setup

@@ -1,0 +1,23 @@
+README.md
+  s_e5369d415d379b::t_3076cd60440279 1-89
+__init__.py
+  s_e5369d415d379b::t_e70a612d9283d7 1-36
+plugin.yaml
+  s_e5369d415d379b::t_2d978f9d20c841 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "5701d476c7ec0316f9f9659ed8308749d5a458b6",
+  "prompts": {},
+  "sessions": {
+    "s_e5369d415d379b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9b040558-739b-4a21-810b-53eec3b51a99",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "nnnet <zkowkmdx@sharklasers.com>"
+    }
+  }
+}
